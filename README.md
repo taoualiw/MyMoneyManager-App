@@ -19,8 +19,8 @@ Install
 
 With Miniconda or Anaconda install, do, in the application's folder (where there is a setup.py file) :
 
-    > conda update conda
-    > conda env create -f environment.yml
+        > conda update conda
+        > conda env create -f environment.yml
 
 (I created environment.yml using the following command inside my development environment: conda env export | grep -v "^prefix: " > environment.yml )
 
@@ -29,23 +29,26 @@ NB: the application has been tested only in MacOS Sierra 10.12.6
 
 3) In a terminal, in the application's folder (where there is a setup.py file):
 
-    > source activate MyMoneyManager
-    > python setup.py install
+        > source activate MyMoneyManager
+        > python setup.py install
 
-4) Create App Bundle on Desktop  
-    > python create_AppBundle.py
-    > source deactivate
+4) Create App Bundle on Desktop
+
+        > python create_AppBundle.py
+        > source deactivate
 
 
 5) To launch:
 
    In a terminal :
-    > source activate MyMoneyManager
-    > MyMoneyManager
-    > source deactivate
+   
+        > source activate MyMoneyManager
+        > MyMoneyManager
+        > source deactivate
 
    In Finder:
-     Go to Desktop
-     Double click on MyMoneyManager icon (MMM)
+     
+        Go to Desktop
+        Double click on MyMoneyManager icon (MMM)
 
 NB: Data are saved in ~/Documents/mmmData folder
