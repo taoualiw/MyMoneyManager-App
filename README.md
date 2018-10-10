@@ -9,7 +9,9 @@ User interface to Visualize, Categorize and Summarize Bank Transactions based on
 
 New Features (10/10/2018):
 ------------------------
-
+-Install Procedure
+-Bundle App details
+-Path bugs resolved
 
 Install
 ----------------------
