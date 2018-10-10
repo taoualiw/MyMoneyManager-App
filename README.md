@@ -51,4 +51,4 @@ NB: the application has been tested only in MacOS Sierra 10.12.6
         Go to Desktop
         Double click on MyMoneyManager icon (MMM)
 
-NB: Data are saved in ~/Documents/mmmData folder
+NB: Imported and Categorized Data saved in ~/Documents/mmmData folder
