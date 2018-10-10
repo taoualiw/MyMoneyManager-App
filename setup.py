@@ -7,22 +7,40 @@ Usage:
 
 #-----------------------------------
 from setuptools import setup, find_packages, Extension
+import os
 
-APP = ['mmm/MoneyManager.py']
-DATA_FILES = ['resources/myCategDF.csv']
-OPTIONS = {'argv_emulation': True,'plist': {'PyRuntimeLocations': ['@executable_path/../Frameworks/libpython3.5m.dylib',
-'/Users/wahiba/anaconda/envs/myMoneyManager/lib/libpython3.5m.dylib']},'iconfile':'images/image.icns'}
+def read(fname):
+	return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
+
+
+DATA_FILES = [('myData',['resources/myCategDF.csv'])]
+#OPTIONS = {'argv_emulation': True,'plist': {'PyRuntimeLocations': ['@executable_path/../Frameworks/libpython3.5m.dylib',
+#'/Users/wahiba/anaconda/envs/myMoneyManager/lib/libpython3.5m.dylib']},'iconfile':'images/image.icns'}
+OPTIONS = {'argv_emulation': True}
 
 setup(
     name = 'MyMoneyManager',
-    version =          '0.0.1',
+    version =          '0.0.2',
     license =          'BSD',
     description =      '',
     author =           "Wahiba Taouali wtaouali@gmail.com",
-    app = APP,
     data_files = DATA_FILES,
+    long_description=read("README.md"),
+	classifiers=[
+		'Development Status :: 2 - Pre-Alpha',
+
+		'License :: OSI Approved :: BSD Licence',
+
+		'Programming Language :: Python :: 3.5',
+	],
     options = {'py2app': OPTIONS},
     setup_requires = ['py2app'],
-    packages = find_packages(exclude = ("images","resources"))
+    packages = find_packages(exclude = ("images","resources","screenshots")),
+    entry_points={
+		'gui_scripts':[
+			'MyMoneyManager= mmm.moneyManager:main',
+		]
+	}
     )
     #py_modules = ['DataEdition', 'DataImport','DataStats',"func_tools","Params"])

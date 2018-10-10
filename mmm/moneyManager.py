@@ -2,12 +2,12 @@
 import tkinter as tk
 import tkinter.ttk as ttk
 import pandas as pd
-from dataImport import *
-from dataEdition import *
-from dataStats import *
-from params import *
+
+from mmm.dataImport import *
+from mmm.dataEdition import *
+from mmm.dataStats import *
+from mmm.params import *
 import os
-import pdb;
 import sys;
 
 # Root class to create the interface and define the controller function to switch frames
@@ -26,16 +26,16 @@ class MoneyManagerApp(tk.Tk):
             myDF = myDF.reindex(columns = ["account","date","trans_id","payee","amount",'categoryGroup','category'])
         #display(myDF.head())
         #---------
+        pathmmm = os.path.abspath(os.path.dirname(__file__))
         try:
             myCategDF = pd.read_csv(path_myfiles+"/"+"myCategDF.csv")
-            print(" ")
             print("Importing Categorization Data Frame ")
         except:
             print("Initializing Category Data Frame...")
             try:
-                myCategDF = pd.read_csv(os.path.abspath(os.getcwd() + "/../Resources")+"/"+"myCategDF.csv")
+                myCategDF = pd.read_csv(os.path.abspath(pathmmm+'/../myData'+"/"+"myCategDF.csv"))
             except:
-                myCategDF = pd.read_csv(os.path.abspath(os.getcwd() + "../resources/myCategDF.csv"))
+                myCategDF = pd.read_csv(os.path.abspath(os.getcwd() + "/resources/myCategDF.csv"))
                 #myCategDF = myCategDF.reindex(columns = ['payee','categoryGroup','category'])
             #myCategDF.to_csv(path_myfiles+"/"+"myCategDF.csv",index=False)
         return myDF, myCategDF
@@ -86,9 +86,8 @@ class MoneyManagerNoteBook(tk.Frame):
         self.master.DF.to_csv(path_myfiles+"/"+"myDF.csv",index=False)
         self.master.CategDF.to_csv(path_myfiles+"/"+"myCategDF.csv",index=False)
 
-# Notebook - Tab 3
-
+def main():
+    Root = MoneyManagerApp()
+    Root.mainloop()
 if __name__ == "__main__":
-     #pdb.set_trace();
-     Root = MoneyManagerApp()
-     Root.mainloop()
+     main()

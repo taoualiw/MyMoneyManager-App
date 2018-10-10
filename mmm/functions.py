@@ -1,6 +1,7 @@
 import pandas as pd
 import os
 import numpy as np
+np.set_printoptions(precision=2)
 
 def import_transFileUFCU(path_transfilename):
     df = pd.read_csv(path_transfilename)

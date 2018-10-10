@@ -3,8 +3,8 @@ import tkinter as tk
 from tkinter import filedialog
 import pandas as pd
 
-from functions import *
-from moneyManager import *
+from mmm.functions import *
+from mmm.moneyManager import *
 
 class DataImportTab(tk.Frame):
     def __init__(self, master):

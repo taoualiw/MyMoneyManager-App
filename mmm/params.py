@@ -1,5 +1,7 @@
 import os
-path_myfiles= os.path.abspath(os.getcwd() + "/../data")
+from pathlib import Path
+home = str(Path.home())
+path_myfiles= home+ "/Documents/mmmData"
 categMenuOption = (('Entertainment',
   'Dining Out',
   'Cinema/Theatre/Festival',

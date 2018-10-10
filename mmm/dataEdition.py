@@ -2,9 +2,10 @@ import tkinter as tk
 import pandas as pd
 from functools import partial
 
-from functions import *
-from moneyManager import *
-from params import *
+#from mmm import functions,moneyManager,params
+from mmm.functions import *
+from mmm.moneyManager import *
+from mmm.params import *
 
 
 class DataEditionTab(tk.Frame):
