@@ -35,10 +35,10 @@ NB: the application has been tested only in MacOS Sierra 10.12.6
         > python setup.py install
 
 4) Create App Bundle on Desktop
+   NB. In the file create_AppBundle.py modify pathEnv = "~/anaconda/envs/" with the path to your miniconda or anaconda root folder
 
         > python create_AppBundle.py
         > source deactivate
-
 
 5) To launch:
 
